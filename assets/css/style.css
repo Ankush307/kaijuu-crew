@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Oswald:wght@200..700&family=Righteous&family=Sawarabi+Gothic&display=swap'); 
 *{
     font-family: "Oswald", sans-serif;
+    scroll-behavior: smooth;
  }
  .righteous {
     font-family: "Righteous", sans-serif;
@@ -15,20 +16,16 @@
  }
  .slick-track{
     display: flex !important;
-    gap: 65px !important;
-  }
-
-  .prev-parent:hover .prev{
-    transform: rotateX(180deg);
-  }
-  .next-parent:hover .next{
-    transform: rotateX(180deg);
+    gap: 30px !important;
   }
   .slick-next:before{
     display: none;
   }
   .slick-prev:before{
     display: none;
+  }
+  .slick-track{
+    margin-bottom: 28px;
   }
 
   .slick-dots li button:before{

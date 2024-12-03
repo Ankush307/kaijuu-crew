@@ -43,59 +43,31 @@ $(".slider").slick({
         },
     ],
 });
-// --=========================team-slider===================
-// $(document).ready(function () {
-//     $('.slider').slick({
-//       slidesToShow: 3,
-//       dots:false,
-//       slidesToScroll: 1,
-//       centerMode: true,
-//       variableWidth: true,
-//       prevArrow: $('.prev'),
-//       nextArrow: $('.next'),
-//       responsive: [
-//         {
-//           breakpoint: 1536,
-//           settings: {
-//             slidesToShow: 2,
-//             slidesToScroll: 1,
-//             dots: true, 
-//             centerMode: true,
-//             infinite: true,
-//             dots: true,
-//             autoplay: true,
-//             autoplaySpeed: 3000,
-//           }
-//         },
-//       ]
-//     });
-//   });
 
 $(document).ready(function () {
     $('.sliderTeam').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      centerMode: true,
-      variableWidth: true,
-      prevArrow: $('.prev'),
-      nextArrow: $('.next'),
-      responsive: [
-        {
-          breakpoint: 1536,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-            dots: true, 
-            centerMode: true,
-            infinite: true,
-            dots: true,
-            autoplay: true,
-            autoplaySpeed: 3000,
-          }
-        },
-      ]
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode: true,
+        variableWidth: true,
+        prevArrow: $('.prev'),
+        nextArrow: $('.next'),
+        responsive: [
+            {
+                breakpoint: 1536,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    dots: true,
+                    centerMode: true,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                }
+            },
+        ]
     });
-  });
+});
 
 // =================================accordian============
 document.addEventListener('DOMContentLoaded', () => {
@@ -169,3 +141,28 @@ window.onload = () => {
 
     startCountdown(countdownTime);
 };
+// =================Back To Top ===================
+const backToTopBtn = document.getElementById('backToTopBtn');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopBtn.classList.remove('hidden');
+    } else {
+        backToTopBtn.classList.add('hidden');
+    }
+});
+backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+    });
+});
+// ===========================Drop Down==================
+const flagImg = document.getElementById('flag-img');
+const languageSelect = document.getElementById('language-select');
+languageSelect.addEventListener('change', (event) => {
+    const selectedOption = event.target.selectedOptions[0];
+    const newFlag = selectedOption.getAttribute('data-flag');
+
+    if (newFlag) {
+        flagImg.src = newFlag;
+    }
+});
